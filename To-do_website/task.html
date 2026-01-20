@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Tasks</title>
+    <title>PlanIt | My Tasks</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
+    <div class="navbar">
+        <div class="logo">📝 PlanIt</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="task.html">Tasks</a>
+            <a href="#">Contact</a>
+            <a href="#">Resources</a>
+        </div>
+    </div>
+
+    <div class="container tasks-container">
         <h1>My Tasks</h1>
 
         <div class="input-box">
@@ -14,11 +24,11 @@
             <button onclick="addTask()">Add</button>
         </div>
 
-        <ul id="taskList"></ul>
-
-        <a href="index.html" class="back-link">Back to Home</a>
+        <div class="task-box">
+            <div id="taskList"></div>
+        </div>
+        <a href="index.html" class="back-home">← Return to Home</a>
     </div>
 
     <script src="script.js"></script>
 </body>
-</html>

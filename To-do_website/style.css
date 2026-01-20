@@ -1,21 +1,27 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    background: linear-gradient(135deg, #d2ddfd, #ecd2f8);
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
 }
 
 .container {
-    background: white;
-    padding: 30px;
-    width: 350px;
-    border-radius: 12px;
+    background: rgb(238, 224, 250);
+    padding: 50px 50px;
+    max-width: 750px;          /* reduced width */
+    width: 90%;                /* responsive */
+    margin: 120px auto 60px;
+    border-radius: 16px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
 }
-
+h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #43026e;
+    font-weight: normal;
+    font-style: italic;
+}
 .description {
     color: #555;
     margin: 15px 0 25px;
@@ -24,7 +30,7 @@ body {
 .start-btn {
     display: inline-block;
     padding: 10px 20px;
-    background: #6c63ff;
+    background: #7546b6;
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -34,6 +40,9 @@ body {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 input {
@@ -49,20 +58,35 @@ button {
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    width: 100%;
 }
+
 
 li {
     background: #f1f1f1;
-    margin: 8px 0;
-    padding: 8px;
+    margin: 4px 0;
+    padding: 6px 8px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-radius: 5px;
+    align-items: center;
+    gap: 10px;
+}
+
+li span {
+    margin-left: 8px;   /* SMALL controlled gap */
+    flex: 1;            /* Takes remaining space */
+    text-align: left;
 }
 
 li.completed {
-    text-decoration: line-through;
     color: gray;
+}
+li input[type="checkbox"] {
+    margin: 0;          
+    padding: 0;
+    flex-shrink: 0;
 }
 
 .back-link {
@@ -98,5 +122,157 @@ h1 {
     outline: none;
     box-shadow: 0 0 3px #d60000;
 }
+/* Navigation bar */
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
 
+.navbar a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+}
 
+.navbar a:hover {
+    color: #6c63ff;
+    text-decoration: underline;
+}
+
+/* Home page taglines */
+.tagline {
+    font-style: italic;
+    color: #555;
+    margin: 4px 0;
+    font-size: 15px;
+}
+/* Taglines section at bottom */
+.taglines {
+    max-width: 1100px;
+    margin: 80px auto 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.tagline-box {
+    font-style: italic;
+    font-size: 16px;
+    color: #444;
+}
+.tagline-box:hover {
+    color: #6c63ff;
+}
+.task-box {
+    background: #fafafa;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.08);
+}
+
+/* IMPORTANT: make ul full width */
+.task-box ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.task-box li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+.task-box li input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    transform-origin: left;
+    flex-shrink: 0;
+    display: flex;
+    align-self: flex-start;
+    float: left
+}
+
+.task-box li span {
+    margin-left: 0px;
+    flex: 1;
+    text-align: left;
+}
+
+.logo {
+    height: 40px;
+    vertical-align: middle;
+}
+/* Compact layout for Tasks page */
+.tasks-container {
+    padding: 35px 45px;
+}
+
+/* Reduce spacing below heading */
+.tasks-container h1 {
+    margin-bottom: 12px;
+}
+
+/* Make input section tighter */
+.tasks-container .input-box {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+/* Reduce task box padding */
+.tasks-container .task-box {
+    padding: 15px;
+    margin-top: 15px;
+}
+
+/* Make task items more compact */
+.tasks-container li {
+    margin: 5px 0;
+    padding: 6px 8px;
+    font-size: 14px;
+}
+
+/* Reduce delete button size slightly */
+.tasks-container .delete-btn {
+    padding: 3px 6px;
+    font-size: 12px;
+}
+
+/* Reduce date heading spacing */
+.tasks-container h3 {
+    margin: 12px 0 6px;
+    font-size: 15px;
+}
+/* Add Task button styling */
+.input-box button {
+    background-color: #c9c7f6;   /* primary color */
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.input-box button:hover {
+    background-color: #5750d9;
+}
+
+/* Active (click) effect */
+.input-box button:active {
+    transform: scale(0.97);
+}
+/* Return to Home link */
+.back-home {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #08018d;
+}
+
+.back-home:hover {
+    text-decoration: underline;
+}
